@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, black, #14664c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+  background: transparent; 
+  border: 1.5px solid rgba(255, 255, 255, 0.326);
+  transition: 0.1s ease-in-out;
+  border-radius: 50px;
+  color: white;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(46, 46, 46);
+  border: 1.5px;
+  color: white;
+}
+

@@ -1,0 +1,75 @@
+.auth-title {
+    text-align: center;
+    color: rgb(205, 171, 250);
+    margin-bottom: 50px;
+}
+
+.auth-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 35px;
+    width: 45%;
+    border: 4px solid rgb(0, 0, 0);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-boxes {
+    display: flex;
+    justify-content: center; 
+    gap: 5%;
+}
+
+.button-submit{
+    background-color: rgb(205, 171, 250);
+    color: black;
+    margin-top: 3%;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid black;
+}
+
+.signIn-button{
+    background-color: rgb(205, 171, 250);
+    color: black;
+    font-size: 0.8rem;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid black;
+    margin-left: 5px;
+}
+
+.entry-box1{
+    font-family: 'Courier New', Courier, monospace;
+    width: 40%;
+}
+
+.signIn-button:hover,
+.button-submit:hover{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    transition: 0.1s ease-in-out;
+}
+
+.entry-box2{
+    font-family: 'Courier New', Courier, monospace;
+    width: 40%;
+}
+
+.entry-box1:hover,
+.entry-box2:hover{        
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
