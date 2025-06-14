@@ -28,7 +28,7 @@ if not API_KEY:
 # genai.configure(api_key=API_KEY)
 
 # # Route to handle chat with Gemini AI
-# @app.route('/chat', methods=['POST'])
+# @app.route('/chat', methods=['GET', 'POST'])
 # def chat():
 #     data = request.get_json()
 #     user_message = data.get('message')
@@ -56,7 +56,7 @@ if not API_KEY:
 
 
 # Pie chart endpoint
-@app.route('/pie-chart', methods=['POST'])
+@app.route('/pie-chart', methods=['GET', 'POST'])
 def generate_pie_chart():
     data = request.get_json()  
 
@@ -95,7 +95,7 @@ def generate_pie_chart():
     return jsonify({"plot_url": plot_url})
 
 # Emergency fund endpoint
-@app.route('/emergency-fund', methods=['POST'])
+@app.route('/emergency-fund', methods=['GET', 'POST'])
 def calculate_emergency_fund():
    data = request.get_json()
    total_expenses =  0
@@ -117,7 +117,7 @@ def calculate_emergency_fund():
    )
 
 # Personal goal endpoint
-@app.route('/personal-goal', methods=['POST'])
+@app.route('/personal-goal', methods=['GET', 'POST'])
 def calculate_personal_goal():
   data = request.get_json()
   personal_goal = data['goal']
