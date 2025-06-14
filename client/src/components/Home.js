@@ -81,20 +81,20 @@ export default function Home({ loggedIn, userId }) {
         }
 
         // Create all the API requests
-        const emergencyFundRequest = axios.post('http://127.0.0.1:5000/emergency-fund', {
+        const emergencyFundRequest = axios.post('https://budgetnator-api.vercel.app/emergency-fund', {
             income: income,
             goal: goal,
             expenses: expenses
         });
 
-        const personalGoalRequest = axios.post('http://127.0.0.1:5000/personal-goal', {
+        const personalGoalRequest = axios.post('https://budgetnator-api.vercel.app/personal-goal', {
             income: income,
             goal: goal,
             expenses: expenses,
             goalPercent: goalPercent
         });
 
-        const pieChartRequest = axios.post('http://127.0.0.1:5000/pie-chart', {
+        const pieChartRequest = axios.post('https://budgetnator-api.vercel.app/pie-chart', {
             income: income,
             goal: goal,
             expenses: expenses,
