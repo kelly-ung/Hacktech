@@ -24,35 +24,35 @@ API_KEY = os.getenv("GOOGLE_AI_API_KEY")
 if not API_KEY:
     raise ValueError("GOOGLE_AI_API_KEY environment variable is not set")
 
-# # Configure the generativeai library with the API key
-# genai.configure(api_key=API_KEY)
+# Configure the generativeai library with the API key
+genai.configure(api_key=API_KEY)
 
-# # Route to handle chat with Gemini AI
-# @app.route('/chat', methods=['GET', 'POST'])
-# def chat():
-#     data = request.get_json()
-#     user_message = data.get('message')
+# Route to handle chat with Gemini AI
+@app.route('/chat', methods=['GET', 'POST'])
+def chat():
+    data = request.get_json()
+    user_message = data.get('message')
 
-#     if not user_message:
-#         return jsonify({'response': 'Error: No message provided.'}), 400
+    if not user_message:
+        return jsonify({'response': 'Error: No message provided.'}), 400
 
-#     try:
-#         # Create a model instance
-#         model = genai.GenerativeModel('gemini-1.5-pro')
+    try:
+        # Create a model instance
+        model = genai.GenerativeModel('gemini-1.5-pro')
         
-#         # Generate content using the user's message
-#         response = model.generate_content(f"""
-#         You are a helpful financial advisor named Budgetnator. The user said: "{user_message}"
-#         Based on their message, help them set or reach financial goals with realistic and practical advice.
-#         Please keep answers short but informative.
-#         """)
+        # Generate content using the user's message
+        response = model.generate_content(f"""
+        You are a helpful financial advisor named Budgetnator. The user said: "{user_message}"
+        Based on their message, help them set or reach financial goals with realistic and practical advice.
+        Please keep answers short but informative.
+        """)
         
-#         # Extract the text from the response
-#         ai_response = response.text
+        # Extract the text from the response
+        ai_response = response.text
         
-#         return jsonify({'response': ai_response})
-#     except Exception as e:
-#         print(f"Error calling Gemini API: {str(e)}")
+        return jsonify({'response': ai_response})
+    except Exception as e:
+        print(f"Error calling Gemini API: {str(e)}")
 
 
 # Pie chart endpoint
