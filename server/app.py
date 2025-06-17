@@ -28,7 +28,7 @@ if not API_KEY:
 genai.configure(api_key=API_KEY)
 
 # Route to handle chat with Gemini AI
-@app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['GET', 'POST'])
 def chat():
     data = request.get_json()
     user_message = data.get('message')
