@@ -1,6 +1,6 @@
 import os
 from flask import Flask, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask import request
 import matplotlib
 matplotlib.use('Agg') # tell matplotlib to use a non-GUI backend
@@ -28,7 +28,7 @@ if not API_KEY:
 genai.configure(api_key=API_KEY)
 
 # Route to handle chat with Gemini AI
-@app.route('/chat', methods=['GET', 'POST'])
+@app.route('/chat', methods=['POST'])
 def chat():
     data = request.get_json()
     user_message = data.get('message')
@@ -38,7 +38,7 @@ def chat():
 
     try:
         # Create a model instance
-        model = genai.GenerativeModel('gemini-1.5-pro')
+        model = genai.GenerativeModel('gemini-2.0-flash-lite')
         
         # Generate content using the user's message
         response = model.generate_content(f"""
