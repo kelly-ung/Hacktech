@@ -18,7 +18,7 @@ function ChatApp() {
     setLoading(true) 
 
     try {
-      const response = await fetch("https://budgetnator-api.vercel.app/chat", {
+      const response = await fetch("https://budgetnator-server.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMessage }),
