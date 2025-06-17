@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import "./ChatApp.css"
+import ReactMarkdown from "react-markdown"
 
 function ChatApp() {
   const [userMessage, setUserMessage] = useState("")
@@ -60,7 +61,8 @@ function ChatApp() {
           {messages.length === 0 && <div className="empty-state">What kind of investment can I help you with?</div>}
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender === "You" ? "user" : "ai"}`}>
-              <strong>{msg.sender}:</strong> {msg.text}
+                <strong>{msg.sender}:</strong>
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
           ))}
           {loading && <div className="loading">✨Thinking...</div>}
